@@ -6,8 +6,6 @@
 FROM lappsgrid/tomcat7
 
 ENV TERM=xterm
-ENV JAVA_OPTS="-Djava.awt.headless=true -Xmx1G"
-ENV CATALINA_OPTS="-Djava.awt.headless=true -Xmx1G"
 
 USER root
 ADD ./packages/lappsgrid-gate.tgz /usr/share/gate
