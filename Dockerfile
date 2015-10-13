@@ -16,8 +16,14 @@ ADD ./packages/lappsgrid-services.tgz /var/lib/tomcat7/webapps
 ADD ./startup.sh /usr/bin/startup
 ADD ./shutdown.sh /usr/bin/shutdown
 ADD ./tail-log.sh /usr/bin/taillog
+ADD ./waitforlog.sh /usr/bin/waitforlog
+ADD ./waitforstart.sh /usr/bin/waitforstart
+
+RUN 	chmod ug+x /usr/bin/waitforstart 
+
 RUN chmod ug+x /usr/bin/taillog && \
 	chmod ug+x /usr/bin/shutdown && \
+	chmod ug+x /usr/bin/waitforlog &&  \
 	chown -R tomcat7:tomcat7 /usr/share/gate && \
 	chown -R tomcat7:tomcat7 /usr/share/lapps
 	
