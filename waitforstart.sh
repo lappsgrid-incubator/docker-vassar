@@ -11,3 +11,4 @@ while [ -z "$started" ] ; do
 	sleep 5
 	started=`cat $LOG | grep "INFO: Server startup in"`
 done
+echo $started
