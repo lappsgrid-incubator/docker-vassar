@@ -8,10 +8,10 @@ FROM lappsgrid/tomcat7
 ENV TERM=xterm
 
 USER root
-ADD ./packages/lappsgrid-gate.tgz /usr/share/gate
-ADD ./packages/lappsgrid-models.tgz /usr/share/lapps
+ADD ./packages/vassar-gate.tgz /usr/share/gate
+ADD ./packages/vassar-models.tgz /usr/share/lapps
 ADD ./packages/MASC-3.0.0.tgz /var/corpora/MASC-3.0.0
-ADD ./packages/lappsgrid-services.tgz /var/lib/tomcat7/webapps
+ADD ./packages/vassar-services.tgz /var/lib/tomcat7/webapps
 
 ADD ./startup.sh /usr/bin/startup
 ADD ./shutdown.sh /usr/bin/shutdown

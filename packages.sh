@@ -4,7 +4,7 @@
 # to download the packages.
 
 SERVER=http://www.anc.org/downloads/docker
-PACKAGE_LIST="lsd lappsgrid-services lappsgrid-gate lappsgrid-models MASC-3.0.0"
+PACKAGE_LIST="lsd vassar-services vassar-gate vassar-models MASC-3.0.0"
 
 if [ ! -d packages ] ; then
 	mkdir packages
@@ -15,8 +15,7 @@ cd packages
 case "$1" in
 	download)
 		for package in $PACKAGE_LIST ; do
-			#wget $SERVER/$package.tgz
-			ln ../../packages/$package.tgz 
+			wget $SERVER/$package.tgz
 		done
 		;;
 	update)
@@ -24,7 +23,20 @@ case "$1" in
 			if [ -e "$package.tgz" ] ; then
 				echo "Skipping $package"
 			else
-				ln ../../packages/$package.tgz
+				wget $SERVER/$package.tgz
+			fi
+		done
+		;;
+	link)
+		for package in $PACKAGE_LIST ; do
+			cached=../../packages/$package.tgz
+			if [ -e "$package.tgz" ] ; then
+				echo "Skipping $package"
+			elif [ ! -e $cached ] ; then
+				echo "Cached package not found."
+				wget $SERVER/$package.tgz
+			else
+				ln $cached
 			fi
 		done
 		;;
