@@ -3,11 +3,11 @@
 
 LOG=/var/log/tomcat7/catalina.out
 
-service postgresql start
-until pg_isready &>/dev/null ; do
-	echo -n "."
-	sleep 2
-done
+#service postgresql start
+#until pg_isready &>/dev/null ; do
+#	echo -n "."
+#	sleep 2
+#done
 
 service tomcat7 start
 until [ -e $LOG ] ; do
