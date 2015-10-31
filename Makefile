@@ -1,7 +1,9 @@
 vassar:
+	./packages.sh update
 	/usr/local/bin/docker build -t lappsgrid/vassar .
 
 tiny:
+	./packages.sh update
 	/usr/local/bin/docker build -f Dockerfile.tiny -t lappsgrid/vassar:tiny .
 	
 push:

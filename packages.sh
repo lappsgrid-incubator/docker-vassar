@@ -4,7 +4,9 @@
 # to download the packages.
 
 SERVER=http://www.anc.org/downloads/docker
-PACKAGE_LIST="lsd vassar-services vassar-gate vassar-models MASC-3.0.0"
+PACKAGE_LIST="lsd vassar-gate vassar-models MASC-3.0.0 GateConverter_2.0.0 GateServices_2.0.0 MascDataSource_2.0.0 MascDataSource_2.1.0 StanfordServices_2.0.0"
+
+#	GateConverter\\\\#2.0.0.war GateServices\\#2.0.0.war MascDataSource\\#2.0.0 StanfordServices\\#2.0.0"
 
 if [ ! -d packages ] ; then
 	mkdir packages
@@ -20,7 +22,7 @@ case "$1" in
 		;;
 	update)
 		for package in $PACKAGE_LIST ; do
-			if [ -e "$package.tgz" ] ; then
+			if [ -e $package.tgz ] ; then
 				echo "Skipping $package"
 			else
 				wget $SERVER/$package.tgz
