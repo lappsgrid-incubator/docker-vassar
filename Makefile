@@ -1,17 +1,23 @@
+DOCKER=/usr/local/bin/docker
+IMAGE=lappsgrid/vassar
+
 vassar:
 	./packages.sh update
-	/usr/local/bin/docker build -t lappsgrid/vassar .
+	$(DOCKER) build -t $(IMAGE) .
 
 tiny:
 	./packages.sh update
-	/usr/local/bin/docker build -f Dockerfile.tiny -t lappsgrid/vassar:tiny .
+	$(DOCKER)  build -f Dockerfile.tiny -t $(IMAGE):tiny .
 	
 push:
-	/usr/local/bin/docker push lappsgrid/vassar
+	$(DOCKER)  push $(IMAGE)
 	
 push-tiny:
-	/usr/local/bin/docker push lappsgrid/vassar:tiny
+	$(DOCKER)  push $(IMAGE):tiny
 	
+tag:
+	if [ -n "$(TAG)" ] ; then $(DOCKER) tag $(IMAGE) $(IMAGE):$(TAG) ; fi
+
 help:
 	@echo
 	@echo "GOALS"
@@ -19,4 +25,5 @@ help:
 	@echo "tiny      - builds a smaller image."
 	@echo "push      - uploads the image to hub.docker.com"
 	@echo "push-tiny - uploads the tiny image to hub.docker.com"
+	@echo "tag       - Tags the image on hub.docker.com"
 	@echo
