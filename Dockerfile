@@ -14,9 +14,9 @@ ADD ./packages/MASC-3.0.0.tgz /var/corpora/MASC-3.0.0
 #ADD ./packages/vassar-services.tgz /var/lib/tomcat7/webapps
 ADD ./packages/GateConverter_2.0.0.tgz /var/lib/tomcat7/webapps
 ADD ./packages/GateServices_2.0.0.tgz /var/lib/tomcat7/webapps
-ADD ./packages/MascDataSource_2.0.0.tgz /var/lib/tomcat7/webapps
-ADD ./packages/MascDataSource_2.1.0.tgz /var/lib/tomcat7/webapps
-ADD ./packages/StanfordServices_2.0.0.tgz /var/lib/tomcat7/webapps
+#ADD ./packages/MascDataSource_2.0.0.tgz /var/lib/tomcat7/webapps
+ADD ./packages/MascDataSource_2.2.0.tgz /var/lib/tomcat7/webapps
+ADD ./packages/StanfordServices_2.1.0.tgz /var/lib/tomcat7/webapps
 
 ADD ./startup.sh /usr/bin/startup
 ADD ./shutdown.sh /usr/bin/shutdown
