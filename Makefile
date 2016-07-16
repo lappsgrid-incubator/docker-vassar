@@ -1,5 +1,5 @@
 DOCKER=/usr/local/bin/docker
-IMAGE=lappsgrid/vassar-discovery
+IMAGE=lappsgrid/vassar
 
 vassar:
 	./packages.sh update

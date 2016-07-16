@@ -17,7 +17,7 @@ ADD ./packages/GateServices_2.0.0.tgz /var/lib/tomcat7/webapps
 #ADD ./packages/MascDataSource_2.0.0.tgz /var/lib/tomcat7/webapps
 ADD ./packages/MascDataSource_2.2.0.tgz /var/lib/tomcat7/webapps
 ADD ./packages/StanfordServices_2.1.0.tgz /var/lib/tomcat7/webapps
-ADD ./packages/LingpipeServices.tgs /var/lib/tomcat7/webapps
+ADD ./packages/LingpipeServices.tgz /var/lib/tomcat7/webapps
 
 ADD ./startup.sh /usr/bin/startup
 ADD ./shutdown.sh /usr/bin/shutdown
