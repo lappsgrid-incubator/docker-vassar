@@ -1,4 +1,4 @@
-DOCKER=/usr/local/bin/docker
+DOCKER=/usr/bin/docker
 IMAGE=lappsgrid/vassar
 
 vassar:
@@ -16,7 +16,7 @@ push-tiny:
 	$(DOCKER)  push $(IMAGE):tiny
 	
 tag:
-	if [ -n "$(TAG)" ] ; then $(DOCKER) tag $(IMAGE) $(IMAGE):$(TAG) ; fi
+	if [ -n "$(TAG)" ] ; then $(DOCKER) tag $(IMAGE) $(IMAGE):$(TAG) ; $(DOCKER) push $(IMAGE):$(TAG) ; fi
 
 help:
 	@echo
