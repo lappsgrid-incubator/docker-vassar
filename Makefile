@@ -8,13 +8,13 @@ vassar:
 tiny:
 	./packages.sh update
 	$(DOCKER)  build -f Dockerfile.tiny -t $(IMAGE):tiny .
-	
+
 push:
 	$(DOCKER)  push $(IMAGE)
-	
+
 push-tiny:
 	$(DOCKER)  push $(IMAGE):tiny
-	
+
 tag:
 	if [ -n "$(TAG)" ] ; then $(DOCKER) tag $(IMAGE) $(IMAGE):$(TAG) ; $(DOCKER) push $(IMAGE):$(TAG) ; fi
 
