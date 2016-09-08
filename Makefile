@@ -1,4 +1,5 @@
-DOCKER=/usr/bin/docker
+#DOCKER=/usr/bin/docker
+DOCKER=docker
 IMAGE=lappsgrid/vassar
 
 vassar:
